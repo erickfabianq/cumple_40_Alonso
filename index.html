@@ -66,24 +66,140 @@ a{color:inherit}.page{position:relative;max-width:1120px;margin:auto;padding:0 6
 @media(max-width:360px){.move-title{font-size:1.48rem}.hero-top .eyebrow{font-size:.56rem}.seal{font-size:.55rem;padding:.45rem .6rem}.digits{gap:.55rem}.digit b{font-size:2rem}}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Revisión de composición: lectura vertical, sin desbordamiento horizontal */
+html,body{width:100%;max-width:100%;overflow-x:clip}
+.page{width:100%;padding-left:clamp(112px,12vw,148px);padding-right:6%;overflow:clip}
+.snake-art{left:8px;right:auto;top:0;bottom:0;width:clamp(100px,10vw,132px);height:100%;opacity:.34;z-index:0}
+.snake-art svg{display:block;width:100%;height:100%;overflow:visible}
+.snake-shadow{fill:none;stroke:#30362b;stroke-width:48;stroke-linecap:round;opacity:.11}
+.snake-body{fill:none;stroke:var(--olive);stroke-width:41;stroke-linecap:round;stroke-linejoin:round}
+.snake-scales{fill:none;stroke:url(#snakeScales);stroke-width:36;stroke-linecap:round;opacity:.9}
+.snake-belly{fill:none;stroke:#B69A62;stroke-width:8;stroke-linecap:round;opacity:.78}
+.snake-head{fill:var(--olive);stroke:var(--gold);stroke-width:3}
+.snake-jaw{fill:none;stroke:#E0D1AE;stroke-width:3;stroke-linecap:round}
+.snake-eye-line{fill:none;stroke:#D9C89F;stroke-width:3;stroke-linecap:round}
+.snake-eye{fill:#F1EBDD;stroke:#30362b;stroke-width:1.5}
+.snake-nostril{fill:none;stroke:#F1EBDD;stroke-width:2.5;stroke-linecap:round}
+.snake-tongue{fill:none;stroke:#B66D5D;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+.hero{min-height:100svh;padding:4.5rem 0 4rem}
+.hero-title{max-width:min(690px,72%);z-index:2}
+.move-title{white-space:normal;max-width:100%;font-size:clamp(2.5rem,5.4vw,5.25rem);line-height:1.02;letter-spacing:-.055em}
+.hero-foot{max-width:760px}
+.hero-watermark{width:clamp(185px,23vw,260px);right:1.5%;top:23%;color:#C5A66A;transform:none;text-shadow:0 1px 2px rgba(48,54,43,.22)}
+.hero-watermark:before,.hero-watermark:after{display:none!important;content:none!important}
+.hero-watermark span{font-size:.8rem;letter-spacing:.3em}
+.hero-watermark strong{font-size:clamp(5rem,9vw,7.4rem);line-height:.82}
+.hero-watermark span:last-child{font-size:.72rem;letter-spacing:.32em;margin-top:.35rem}
+.hero:after{z-index:0}
+.hero-title,.hero-foot,.hero-top{position:relative;z-index:2}
+.story,.details,.countdown,.rsvp,.closing{position:relative;z-index:1;min-height:88svh;align-content:center}
+.story{padding-top:4rem;padding-bottom:4rem}
+.details{display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem}
+.countdown{min-height:62svh}
+.rsvp{min-height:88svh;margin-left:0;margin-right:0;width:100%;padding:3.5rem clamp(1.3rem,4vw,3.8rem);border-radius:25% 3% 22% 2% / 3% 2% 3% 2%}
+.closing{min-height:75svh;display:flex;flex-direction:column;justify-content:center}
+.story-copy,.details-head,.event-layout,.count-main,.count-side,.rsvp-inner,.closing>*{min-width:0}
+.event-layout{gap:clamp(1.5rem,4vw,3rem)}
+.info-line>div{min-width:0}
+.info-line span{overflow-wrap:anywhere}
+.map-link{max-width:100%;overflow-wrap:anywhere}
+.rsvp-form{width:100%;max-width:720px}
+.field,.field input,.field select{min-width:0;max-width:100%}
+.form-foot{max-width:100%}
+@media(max-width:700px){
+ .page{padding-left:62px;padding-right:6%;overflow:clip}
+ .snake-art{left:2px;right:auto;width:58px;opacity:.3}
+ .snake-shadow{stroke-width:48}
+ .snake-body{stroke-width:41}
+ .snake-scales{stroke-width:36}
+ .hero{min-height:94svh;padding:3rem 0 2.5rem}
+ .hero:after{width:66vw;height:66vw;right:-30%;top:12%;border-color:rgba(182,154,98,.42);box-shadow:0 0 0 14px rgba(182,154,98,.035),0 0 0 29px rgba(182,154,98,.025)}
+ .hero-title{max-width:100%;padding-top:1.2rem}
+ .move-title{font-size:clamp(2rem,7.4vw,3rem);white-space:normal;line-height:1.03}
+ .invite-line{font-size:1.5rem;margin-top:.7rem}
+ .hero-watermark{width:clamp(120px,35vw,150px);right:-1%;top:17%;color:#C5A66A}
+ .hero-watermark span{font-size:.48rem;letter-spacing:.19em}
+ .hero-watermark strong{font-size:3.45rem}
+ .hero-watermark span:last-child{font-size:.45rem;letter-spacing:.2em}
+ .hero-foot{margin-top:2.3rem;gap:.8rem}
+ .hero-foot p{max-width:100%;font-size:.82rem;line-height:1.55}
+ .hero-note{margin-left:28%;font-size:1.18rem}
+ .story,.details,.countdown,.rsvp,.closing{min-height:0}
+ .story{padding:4.2rem 0 3.8rem;grid-template-columns:minmax(0,1fr);gap:.5rem}
+ .story-copy h2{font-size:clamp(2.1rem,8.6vw,2.8rem)}
+ .story-copy p{font-size:.88rem;line-height:1.65}
+ .people-art{min-height:180px;margin-top:.3rem}
+ .people-art svg{width:100%;max-width:300px}
+ .art-caption{font-size:1.05rem;right:0}
+ .details{padding:4rem 0}
+ .details-head{margin-bottom:1.5rem}
+ .details-head h2{font-size:clamp(2.1rem,8.4vw,2.8rem)}
+ .details-head .script{font-size:1.2rem}
+ .event-layout{grid-template-columns:minmax(0,1fr);gap:1.4rem}
+ .event-date{font-size:4.8rem}
+ .arrival-note{font-size:1.2rem;margin-top:.9rem}
+ .event-info{margin-left:0;padding-left:.85rem}
+ .info-line{gap:.65rem;margin:.9rem 0}
+ .info-line strong{font-size:.86rem}
+ .info-line span{font-size:.8rem;line-height:1.5}
+ .map-link{font-size:.78rem}
+ .countdown{padding:2.4rem 0;gap:1.2rem}
+ .digits{width:100%;justify-content:space-between;gap:.35rem}
+ .digit b{font-size:clamp(1.75rem,7vw,2.25rem)}
+ .digit small{font-size:.48rem}
+ .count-side{max-width:100%;padding-left:.9rem}
+ .rsvp{width:100%;margin:2.5rem 0;padding:2.6rem 1.1rem;border-radius:18% 3% 16% 2% / 2% 2% 2% 2%}
+ .rsvp h2{font-size:clamp(2.15rem,8.5vw,2.7rem)}
+ .rsvp p{font-size:.85rem;line-height:1.6}
+ .rsvp-form{grid-template-columns:minmax(0,1fr);gap:.85rem;margin-top:1.2rem}
+ .field.full{grid-column:1}
+ .field input,.field select{padding:.72rem .75rem;font-size:.84rem}
+ .radio-row{gap:.4rem}
+ .radio-row label{font-size:.69rem;padding:.5rem .65rem}
+ .form-foot{align-items:flex-start;flex-direction:column;gap:.65rem}
+ .form-foot small{max-width:100%;line-height:1.5}
+ .archive{padding:1rem 0 3rem}
+ .closing{padding:3.5rem 0;min-height:65svh}
+ .closing h2{font-size:clamp(2.1rem,8vw,2.7rem)}
+ .closing p{font-size:.86rem;line-height:1.65}
+}
+@media(max-width:380px){
+ .page{padding-left:54px;padding-right:5%}
+ .snake-art{width:50px}
+ .hero-watermark{width:112px;right:-2%;top:19%}
+ .hero-watermark strong{font-size:3rem}
+ .move-title{font-size:1.95rem}
+ .digits{gap:.2rem}
+ .digit b{font-size:1.65rem}
+ .rsvp{padding-left:.9rem;padding-right:.9rem}
+}
+@media(min-width:701px) and (max-width:1000px){
+ .page{padding-left:105px;padding-right:5%}
+ .snake-art{left:4px;width:92px}
+ .hero-title{max-width:68%}
+ .hero-watermark{width:190px;right:0}
+ .move-title{font-size:clamp(2.7rem,5.2vw,4rem)}
+}
+
 </style>
 </head>
 <body>
 <main class="page">
-<div class="snake-art" aria-hidden="true"><svg viewBox="0 0 180 1200" preserveAspectRatio="none">
+<div class="snake-art" aria-hidden="true"><svg viewBox="0 0 180 3000" preserveAspectRatio="none">
  <defs>
-  <pattern id="snakeScales" width="22" height="20" patternUnits="userSpaceOnUse"><path d="M1 10 Q11 -3 21 10 Q11 23 1 10Z" fill="none" stroke="#D9C89F" stroke-width="2" opacity=".9"/></pattern>
+  <pattern id="snakeScales" width="24" height="26" patternUnits="userSpaceOnUse"><path d="M2 13 Q12 -2 22 13 Q12 28 2 13Z" fill="none" stroke="#D9C89F" stroke-width="2.2" opacity=".82"/></pattern>
  </defs>
- <path class="snake-shadow" d="M91 -15 C24 85 151 154 88 265 S28 425 101 525 S148 690 76 795 S30 950 83 1080"/>
- <path class="snake-body" d="M91 -15 C24 85 151 154 88 265 S28 425 101 525 S148 690 76 795 S30 950 83 1080"/>
- <path class="snake-scales" d="M91 -15 C24 85 151 154 88 265 S28 425 101 525 S148 690 76 795 S30 950 83 1080"/>
- <path class="snake-belly" d="M91 -15 C24 85 151 154 88 265 S28 425 101 525 S148 690 76 795 S30 950 83 1080"/>
- <path class="snake-head" d="M83 1062 C61 1055 39 1071 39 1095 C39 1121 58 1142 84 1143 C111 1144 132 1125 130 1100 C128 1075 107 1060 83 1062Z"/>
- <path class="snake-jaw" d="M47 1110 Q84 1134 122 1108"/>
- <path class="snake-eye-line" d="M57 1084 Q68 1075 77 1084 M94 1084 Q106 1075 116 1085"/>
- <circle class="snake-eye" cx="68" cy="1087" r="4"/><circle class="snake-eye" cx="105" cy="1087" r="4"/>
- <path class="snake-nostril" d="M82 1100 l-2 5 M92 1100 l2 5"/>
- <path class="snake-tongue" d="M84 1140 l0 22 m0 -10 l-10 9 m10 -9 l10 9"/>
+ <path class="snake-shadow" d="M88 -30 C15 110 160 230 88 390 C18 550 155 690 88 850 C20 1010 158 1150 88 1310 C18 1470 155 1610 88 1770 C18 1930 158 2070 88 2230 C20 2390 155 2530 88 2690 C55 2770 65 2850 90 2910"/>
+ <path class="snake-body" d="M88 -30 C15 110 160 230 88 390 C18 550 155 690 88 850 C20 1010 158 1150 88 1310 C18 1470 155 1610 88 1770 C18 1930 158 2070 88 2230 C20 2390 155 2530 88 2690 C55 2770 65 2850 90 2910"/>
+ <path class="snake-scales" d="M88 -30 C15 110 160 230 88 390 C18 550 155 690 88 850 C20 1010 158 1150 88 1310 C18 1470 155 1610 88 1770 C18 1930 158 2070 88 2230 C20 2390 155 2530 88 2690 C55 2770 65 2850 90 2910"/>
+ <path class="snake-belly" d="M88 -30 C15 110 160 230 88 390 C18 550 155 690 88 850 C20 1010 158 1150 88 1310 C18 1470 155 1610 88 1770 C18 1930 158 2070 88 2230 C20 2390 155 2530 88 2690 C55 2770 65 2850 90 2910"/>
+ <path class="snake-head" d="M90 2874 C62 2860 35 2880 36 2910 C37 2943 62 2968 93 2968 C124 2968 146 2944 143 2912 C141 2882 117 2865 90 2874Z"/>
+ <path class="snake-jaw" d="M45 2920 Q91 2948 135 2918"/>
+ <path class="snake-eye-line" d="M55 2900 Q69 2887 82 2900 M101 2900 Q115 2887 128 2900"/>
+ <circle class="snake-eye" cx="69" cy="2902" r="5"/><circle class="snake-eye" cx="115" cy="2902" r="5"/>
+ <path class="snake-nostril" d="M87 2920 l-2 6 M99 2920 l2 6"/>
+ <path class="snake-tongue" d="M91 2965 l0 28 m0 -12 l-12 11 m12 -11 l12 11"/>
  </svg></div>
 <section class="hero" id="inicio">
  <div class="hero-top"><span class="eyebrow">Invitación especial · Noviembre 2026</span></div>
