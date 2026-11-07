@@ -337,6 +337,13 @@ h1,.book-title{color:var(--brazil-green)}
  .event-count .digits{margin-top:14px;justify-content:space-between}
 }
 
+
+/* Cierre editorial con separador y verde profundo */
+.closing-rule{margin:15px 0 13px;background:var(--line)}
+.closing-rule:after{background:var(--paper);color:#B99B45}
+.closing h2{color:#285A3D!important}
+.closing>.section-label{color:#46543C}
+@media(max-width:720px){.closing-rule{margin:10px 0 16px}}
 </style>
 </head>
 <body>
@@ -419,6 +426,7 @@ h1,.book-title{color:var(--brazil-green)}
   <span class="handnote">Participante esperado: tú</span>
  </aside>
 </section>
+<div class="hero-rule closing-rule" aria-hidden="true"></div>
 <section class="closing">
  <div class="section-label" style="justify-content:center">Última anotación</div>
  <h2>Toda investigación deja huellas...</h2>
