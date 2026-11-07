@@ -207,6 +207,18 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
  .hero-watermark strong{font-size:3.7rem}
  .smalltitle{font-size:.66rem}
 }
+
+/* Ajuste de marco exterior y jerarquía tipográfica sin alterar las secciones */
+body{background:#d8d1c1}
+.page{background:var(--paper);border-left:10px solid #e5dece;border-right:10px solid #e5dece;box-shadow:0 0 0 1px rgba(72,84,58,.12);max-width:1160px}
+.hero-title .smalltitle{font-size:clamp(1.45rem,3.2vw,2.35rem);line-height:1.02;max-width:250px;margin-bottom:.65rem}
+.hero:after{right:-24vw}
+@media(max-width:700px){
+ .page{width:calc(100% - 16px);margin:8px auto;border-left-width:7px;border-right-width:7px}
+ .hero-title .smalltitle{font-size:1.55rem;line-height:1.02;max-width:190px;margin-bottom:.55rem}
+ .hero:after{right:-33vw}
+ .hero-title{max-width:calc(100% - 8px)}
+}
 </style>
 </head>
 <body>
