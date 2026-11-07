@@ -202,9 +202,36 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
 
 /* Sello champán y pequeño respiro entre el índice y el título */
 .book-stamp{
- background:#d8c89e;
- border-color:#b79a62;
- color:var(--olive);
+ width:88px;
+ height:88px;
+ right:17px;
+ bottom:39px;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ gap:0;
+ border:1.5px solid #b79a62;
+ border-radius:50%;
+ background:#e8d9b5;
+ color:#a98548;
+ font:600 .54rem/1.05 'DM Sans',sans-serif;
+ letter-spacing:.12em;
+ text-align:center;
+ transform:rotate(-9deg);
+ box-shadow:0 0 0 3px #e8d9b5,0 0 0 4px #b79a62;
+}
+.book-stamp:before{
+ content:"40";
+ display:block;
+ font:500 2.55rem/.82 'Fraunces',serif;
+ letter-spacing:-.09em;
+ margin:1px 0 3px;
+ color:#a98548;
+}
+@media(max-width:720px){
+ .book-stamp{width:74px;height:74px;right:15px;bottom:33px;font-size:.46rem}
+ .book-stamp:before{font-size:2.15rem}
 }
 .hero-copy{padding-left:12px}
 .hero-index{left:1%}
@@ -232,7 +259,7 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
    <div class="book-title">Cuaderno<br>de campo</div>
    <div class="book-subtitle">Historias compartidas</div>
    <div class="book-coords">REGISTRO 040 · 21.11.2026</div>
-   <div class="book-stamp">ALONSO<br>40 AÑOS</div>
+   <div class="book-stamp">ALONSO<br>AÑOS</div>
   </div>
   <span class="specimen-label">Notas de una celebración · 040</span>
  </div>
