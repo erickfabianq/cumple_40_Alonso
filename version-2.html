@@ -245,20 +245,29 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
  .hero-index{left:-30px;top:7%;z-index:1}
 }
 
-/* Serpiente minimalista como marca de agua: acompaña el recorrido sin alterar las tarjetas */
+/* Serpiente de fondo: cuerpo texturizado, sin cabeza, limitado al recorrido de las tarjetas */
 .shell:before{z-index:0}
-.snake-watermark{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;opacity:.19}
+.modules{position:relative;isolation:isolate}
+.snake-watermark{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.42}
 .snake-watermark svg{display:block;width:100%;height:100%}
+.modules>.card{z-index:1}
 .shell>header,.shell>.hero,.shell>.modules,.shell>.closing,.shell>.footer{position:relative;z-index:2}
+
+/* Acentos festivos inspirados en los colores de Brasil, sin desplazar la paleta editorial */
+:root{--brazil-green:#398b57;--brazil-blue:#397eae;--brazil-yellow:#e0b844}
+.kicker{color:var(--brazil-green)}
+.section-label:before{background:linear-gradient(90deg,var(--brazil-green) 0 45%,var(--brazil-blue) 45% 72%,var(--brazil-yellow) 72%)}
+.textile-band{background:repeating-linear-gradient(45deg,transparent 0 5px,#9b8052 5px 7px,transparent 7px 10px),repeating-linear-gradient(-45deg,transparent 0 5px,var(--brazil-green) 5px 7px,transparent 7px 10px),linear-gradient(90deg,transparent 0 38%,var(--brazil-blue) 38% 48%,transparent 48% 68%,var(--brazil-yellow) 68% 78%,transparent 78%)}
+.card:before{background:repeating-linear-gradient(45deg,transparent 0 5px,#9b8052 5px 7px,transparent 7px 10px),repeating-linear-gradient(-45deg,transparent 0 5px,var(--brazil-green) 5px 7px,transparent 7px 10px),linear-gradient(90deg,transparent 0 72%,var(--brazil-blue) 72% 84%,transparent 84% 90%,var(--brazil-yellow) 90% 96%,transparent 96%);background-size:12px 7px}
+.note-card:before{background:repeating-linear-gradient(90deg,transparent 0 7px,var(--brazil-green) 7px 9px,transparent 9px 14px),linear-gradient(90deg,transparent 0 72%,var(--brazil-blue) 72% 84%,var(--brazil-yellow) 84% 96%,transparent 96%);background-size:auto}
+.field-aside:before{background:repeating-linear-gradient(45deg,transparent 0 5px,var(--brazil-blue) 5px 7px,transparent 7px 10px),repeating-linear-gradient(-45deg,transparent 0 5px,var(--brazil-yellow) 5px 7px,transparent 7px 10px)}
+.date-month{color:var(--brazil-blue)}
+.detail-icon{color:var(--brazil-green)}
+.text-link{border-color:var(--brazil-yellow)}
 </style>
 </head>
 <body>
 <main class="shell">
- <div class="snake-watermark" aria-hidden="true">
-  <svg viewBox="0 0 1000 2400" preserveAspectRatio="none">
-   <path d="M145 -35 C760 185 910 420 600 650 C290 880 75 1050 350 1260 C650 1485 930 1640 690 1870 C450 2090 210 2240 430 2440" fill="none" stroke="#78836a" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
- </div>
 <header class="topline"><span class="eyebrow">Cuaderno de campo · Edición especial</span></header>
 <section class="hero" id="inicio">
  <span class="hero-index">REGISTRO N.º 040 · NOVIEMBRE 2026</span>
@@ -281,6 +290,17 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
 </section>
 <div class="hero-rule"></div>
 <section class="modules" aria-label="Bitácora de la celebración">
+ <div class="snake-watermark" aria-hidden="true">
+  <svg viewBox="0 0 1000 2200" preserveAspectRatio="none">
+   <defs>
+    <pattern id="snake-scales" width="34" height="26" patternUnits="userSpaceOnUse">
+     <path d="M-17 13 Q-8 0 0 13 T17 13 T34 13 M0 26 Q9 13 17 26 T34 26 T51 26" fill="none" stroke="#68785c" stroke-width="2.1" opacity=".7"/>
+    </pattern>
+   </defs>
+   <path d="M105 -45 C710 125 920 340 665 555 C405 770 95 940 335 1150 C575 1360 900 1515 700 1735 C540 1910 330 2050 475 2245" fill="none" stroke="#758565" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" opacity=".18"/>
+   <path d="M105 -45 C710 125 920 340 665 555 C405 770 95 940 335 1150 C575 1360 900 1515 700 1735 C540 1910 330 2050 475 2245" fill="none" stroke="url(#snake-scales)" stroke-width="39" stroke-linecap="round" stroke-linejoin="round" opacity=".34"/>
+  </svg>
+ </div>
  
  
  <article class="card field-card">
