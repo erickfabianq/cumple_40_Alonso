@@ -258,6 +258,79 @@ body{background:#d8d1c1}
  .hero-title .smalltitle{max-width:58%;font-size:1.65rem}
 }
 
+
+/* Segunda revisión: composición coherente en móvil y escritorio */
+.page{max-width:760px;padding-left:clamp(65px,12%,105px);padding-right:clamp(20px,5%,42px)}
+.hero{min-height:92svh}
+.hero-top{max-width:100%}
+.hero-title{max-width:100%}
+.hero-title .smalltitle{max-width:none}
+.hero-watermark{right:5%;top:17%;width:clamp(130px,23vw,180px);transform:none}
+.hero-watermark strong{font-size:clamp(4rem,9vw,6rem)}
+.hero-watermark span{font-size:.7rem}
+.hero-watermark span:last-child{font-size:.65rem}
+.hero:after{right:-27%;top:10%;width:min(55vw,360px);height:min(55vw,360px)}
+.snake-art{left:-12px;width:clamp(115px,18%,165px);opacity:.26}
+.snake-body{stroke-width:49}
+.snake-scales{stroke-width:42}
+.snake-belly{stroke-width:8}
+.snake-head-profile{transform:translateX(-5px)}
+.snake-tongue{display:none}
+.story-copy{margin-left:clamp(0px,3vw,20px)}
+.details-head{margin-left:clamp(0px,4vw,26px)}
+.details-head .script{align-self:center;text-align:center;max-width:none}
+.countdown{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:1.5rem}
+.digits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem}
+.digit{border:1px solid rgba(182,154,98,.6);border-radius:10px;padding:1rem .25rem .8rem;background:rgba(250,247,239,.6)}
+.digit b{font-size:clamp(2rem,6vw,3.4rem)}
+.digit small{font-size:.6rem}
+.count-side{max-width:100%;border-left:0;border-top:1px solid var(--line);padding:1rem 0 0;display:grid;grid-template-columns:1fr auto;gap:.25rem 1rem;align-items:center}
+.count-side .script{grid-column:1;font-size:1.2rem}
+.count-side strong{grid-column:1;font-size:1.45rem;margin:0}
+.count-side p{grid-column:1;max-width:360px}
+.birthday-status{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;justify-content:center;font-size:.78rem;color:var(--olive)}
+.birthday-number{border:1px solid var(--gold);border-radius:8px;padding:.45rem .65rem;font-family:'Fraunces',serif;font-size:1.7rem;line-height:1;color:var(--olive)}
+.rsvp{min-height:0;padding:2.4rem 1.7rem;margin:2rem 0;border-radius:20px}
+.rsvp h2{font-size:clamp(2rem,5vw,2.8rem)}
+.rsvp p{margin:.65rem 0;line-height:1.5}
+.rsvp-form{margin-top:1rem;gap:.7rem}
+.field textarea{min-height:68px}
+.after-party-mark{width:100%;padding:1.2rem .5rem;gap:.55rem}
+.after-party-mark .gallery-note{white-space:normal!important;max-width:100%;font-size:clamp(1.05rem,3vw,1.35rem);line-height:1.2;text-align:center}
+.after-party-mark>span:first-child{border:0;border-radius:0;width:auto;height:auto}
+.closing .script{transform:rotate(-4deg);margin-left:6%}
+@media(max-width:700px){
+ .page{width:calc(100% - 16px);padding-left:clamp(58px,17vw,82px);padding-right:clamp(13px,4vw,25px)}
+ .hero{min-height:92svh;justify-content:center}
+ .hero-top{max-width:100%;margin-bottom:0}
+ .hero-top .eyebrow{max-width:65%;font-size:.63rem}
+ .hero-title{padding-top:3.2rem}
+ .hero-title .smalltitle{max-width:63%;font-size:clamp(1.4rem,5.2vw,1.9rem);margin-left:0;line-height:1.05}
+ .hero-watermark{right:3%;top:15%;width:clamp(108px,31vw,145px)}
+ .hero-watermark strong{font-size:clamp(3.5rem,10vw,4.3rem)}
+ .hero-watermark span{font-size:.5rem}
+ .hero-watermark span:last-child{font-size:.48rem}
+ .hero:after{right:-28%;top:12%;width:72vw;height:72vw}
+ .move-title{font-size:clamp(2.05rem,7.6vw,3rem)}
+ .snake-art{left:-13px;width:clamp(80px,22vw,110px);opacity:.23}
+ .story-copy{margin-left:clamp(0px,3vw,12px)}
+ .details-head{margin-left:clamp(0px,4vw,16px)}
+ .details-head .script{align-self:center;font-size:1.4rem}
+ .digits{gap:.35rem}
+ .digit{padding:.7rem .15rem .6rem;border-radius:7px}
+ .digit b{font-size:clamp(1.55rem,6.7vw,2.5rem)}
+ .digit small{font-size:.48rem}
+ .count-side{grid-template-columns:minmax(0,1fr) auto;gap:.3rem}
+ .count-side strong{font-size:1.25rem}
+ .count-side .script{font-size:1.05rem}
+ .count-side p{font-size:.7rem}
+ .birthday-status{font-size:.7rem;max-width:105px;text-align:center}
+ .birthday-number{font-size:1.5rem}
+ .rsvp{padding:2rem 1rem;margin:1.6rem 0}
+ .rsvp h2{font-size:2.1rem}
+ .after-party-mark .gallery-note{font-size:clamp(.97rem,4vw,1.25rem)}
+}
+
 </style>
 </head>
 <body>
@@ -270,13 +343,12 @@ body{background:#d8d1c1}
  <path class="snake-body" d="M88 -30 C-35 240 -25 510 90 750 C205 990 210 1240 90 1500 C-30 1760 -20 2010 90 2250 C200 2490 195 2730 90 2910"/>
  <path class="snake-scales" d="M88 -30 C-35 240 -25 510 90 750 C205 990 210 1240 90 1500 C-30 1760 -20 2010 90 2250 C200 2490 195 2730 90 2910"/>
  <path class="snake-belly" d="M88 -30 C-35 240 -25 510 90 750 C205 990 210 1240 90 1500 C-30 1760 -20 2010 90 2250 C200 2490 195 2730 90 2910"/>
- <g transform="rotate(75 90 2915)">
- <path class="snake-head" d="M90 2874 C62 2860 35 2880 36 2910 C37 2943 62 2968 93 2968 C124 2968 146 2944 143 2912 C141 2882 117 2865 90 2874Z"/>
- <path class="snake-jaw" d="M45 2920 Q91 2948 135 2918"/>
- <path class="snake-eye-line" d="M55 2900 Q69 2887 82 2900 M101 2900 Q115 2887 128 2900"/>
- <circle class="snake-eye" cx="69" cy="2902" r="5"/><circle class="snake-eye" cx="115" cy="2902" r="5"/>
- <path class="snake-nostril" d="M87 2920 l-2 6 M99 2920 l2 6"/>
- <path class="snake-tongue" d="M91 2965 l0 28 m0 -12 l-12 11 m12 -11 l12 11"/>
+ <g class="snake-head-profile">
+ <path class="snake-head" d="M89 2885 C108 2877 126 2881 137 2891 C149 2900 158 2904 174 2906 C163 2915 150 2921 137 2924 C119 2929 103 2924 88 2913 Z"/>
+ <path class="snake-jaw" d="M115 2917 Q143 2924 166 2908"/>
+ <path class="snake-eye-line" d="M132 2896 Q139 2892 145 2897"/>
+ <circle class="snake-eye" cx="139" cy="2898" r="2.6"/>
+ <circle class="snake-nostril" cx="164" cy="2907" r="1.7"/>
  </g>
  </svg></div>
 <section class="hero" id="inicio">
@@ -301,11 +373,11 @@ body{background:#d8d1c1}
 <section class="details" id="celebracion"><div class="details-head"><div><span class="eyebrow">Coordenadas del encuentro</span><h2>La próxima historia empieza aquí.</h2></div><span class="script">Punto de reunión<br>confirmado ✦</span></div>
  <div class="event-layout"><div><div class="event-date">21<small>noviembre · sábado</small></div><div class="arrival-note">¡Nos encontramos desde las 8:30 p. m.!</div></div><div class="event-info"><div class="info-line"><span class="symbol">◷</span><div><strong>8:30 p. m. · hasta las 4:00 a. m.</strong><span>Ingreso libre hasta las 10:30 p. m. Después, el ingreso cuesta S/ 20.</span></div></div><div class="info-line"><span class="symbol">⌖</span><div><strong>Shushupe Bar</strong><span>Av. Grau 203, Barranco · a media cuadra del Parque Municipal.</span><br><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shushupe+Bar%2C+Av.+Grau+203%2C+Barranco%2C+Lima">Ver ubicación en el mapa ↗</a></div></div><div class="info-line"><span class="symbol">✳</span><div><strong>La compañía</strong><span>Ven con ganas de conversar, brindar y sumar recuerdos.</span><br><a class="map-link" target="_blank" rel="noopener" href="https://www.instagram.com/shushupebar/?hl=es">Conoce Shushupe en Instagram ↗</a></div></div></div></div>
 </section>
-<section class="countdown" aria-label="Cuenta regresiva"><div class="count-main"><div class="eyebrow">Cuenta regresiva · La celebración</div><div class="digits"><div class="digit"><b id="ed">--</b><small>días</small></div><div class="digit"><b id="eh">--</b><small>horas</small></div><div class="digit"><b id="em">--</b><small>min</small></div><div class="digit"><b id="es">--</b><small>seg</small></div></div></div><div class="count-side"><span class="script">Una fecha previa en el calendario</span><strong>18 NOV</strong><p id="birthday-note">Mi cumpleaños oficial. Los saludos anticipados ya están habilitados. 😉</p><div class="eyebrow" style="font-size:.56rem;margin-top:.6rem" id="birthday-count">Faltan <span id="bd">--</span> días</div></div></section>
-<section class="rsvp" id="confirmar"><div class="rsvp-inner"><span class="eyebrow">Registro de participantes</span><h2>¿Podrás acompañarme?</h2><p>Me encantará saber si estarás por ahí. Déjame tus datos y prepara tu confirmación por WhatsApp.</p>
-<form class="rsvp-form" id="rsvp-form"><div class="field full"><label for="guest">Tu nombre</label><input id="guest" name="guest" placeholder="¿Cómo te llamas?" required></div><div class="field full"><label for="answer">¿Nos acompañas?</label><select id="answer" name="answer"><option value="¡Sí, asistiré!">¡Sí, asistiré!</option><option value="Aún estoy consultando mi agenda. Te confirmaré pronto.">Aún estoy consultando mi agenda</option></select></div><div class="field full"><label for="note">Una nota (opcional)</label><textarea id="note" name="note" rows="3" placeholder="Un saludo, una anécdota, con quién vendrás o algo que quieras contarme..."></textarea></div></form>
+<section class="countdown" aria-label="Cuenta regresiva"><div class="count-main"><div class="eyebrow">Cuenta regresiva · La celebración</div><div class="digits"><div class="digit"><b id="ed">--</b><small>días</small></div><div class="digit"><b id="eh">--</b><small>horas</small></div><div class="digit"><b id="em">--</b><small>min</small></div><div class="digit"><b id="es">--</b><small>seg</small></div></div></div><div class="count-side"><span class="script">Una fecha previa en el calendario</span><strong>18 NOV</strong><p id="birthday-note">Mi cumpleaños oficial. Los saludos anticipados ya están habilitados. 😉</p><div class="birthday-status" id="birthday-count">Faltan <span class="birthday-number" id="bd">--</span> días</div></div></section>
+<section class="rsvp" id="confirmar"><div class="rsvp-inner"><span class="eyebrow">Registro de participantes</span><h2>Confirma tu asistencia</h2><p>Me encantaría que me acompañes en este festejo. Déjame tus datos y confirma por WhatsApp.</p>
+<form class="rsvp-form" id="rsvp-form"><div class="field full"><label for="guest">Tu nombre</label><input id="guest" name="guest" placeholder="¿Cómo te llamas?" required></div><div class="field full"><label for="answer">¿Me acompañas?</label><select id="answer" name="answer"><option value="¡Sí, te acompañaré!">¡Sí, asistiré!</option><option value="Aún estoy revisando mi agenda. Te confirmaré pronto.">Aún estoy consultando mi agenda</option></select></div><div class="field full"><label for="note">Una nota (opcional)</label><textarea id="note" name="note" rows="3" placeholder="Un saludo, una anécdota, con quién vendrás o algo que quieras contarme..."></textarea></div></form>
 <div class="form-foot"><button class="btn" id="whatsapp-btn" type="button">Enviar confirmación ↗</button><small>Al pulsar el botón, se abrirá WhatsApp con tu mensaje. Recuerda enviarlo allí para completar la confirmación.</small></div><div class="form-msg" id="form-msg" aria-live="polite"></div></div></section>
-<div class="after-party-mark" aria-label="Galería de recuerdos próximamente" title="Galería de recuerdos"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span class="gallery-note">Próximamente, aquí compartiremos las fotos de esta gran noche.</span></div>
+<div class="after-party-mark" aria-label="Galería de recuerdos próximamente" title="Galería de recuerdos"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span class="gallery-note">Próximamente compartiremos aquí<br>las fotos de esta gran noche.</span></div>
 <section class="closing"><span class="eyebrow">Última anotación</span><h2>Toda investigación deja huellas...</h2><p>Algunas quedan en los cuadernos; otras, en las historias que compartimos.</p><p>Esta vez, que las mejores evidencias sean las fotografías, las risas y los recuerdos.</p><div class="script">¡Nos vemos en el campo!</div> </section>
 <footer class="footer">Alonso · 40 años · Noviembre 2026</footer>
 </main>
