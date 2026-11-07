@@ -243,10 +243,21 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
 @media(min-width:721px){
  .hero-index{left:-30px;top:7%;z-index:1}
 }
+
+/* Serpiente minimalista como marca de agua: acompaña el recorrido sin alterar las tarjetas */
+.shell:before{z-index:0}
+.snake-watermark{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;opacity:.19}
+.snake-watermark svg{display:block;width:100%;height:100%}
+.shell>header,.shell>.hero,.shell>.modules,.shell>.closing,.shell>.footer{position:relative;z-index:2}
 </style>
 </head>
 <body>
 <main class="shell">
+ <div class="snake-watermark" aria-hidden="true">
+  <svg viewBox="0 0 1000 2400" preserveAspectRatio="none">
+   <path d="M145 -35 C760 185 910 420 600 650 C290 880 75 1050 350 1260 C650 1485 930 1640 690 1870 C450 2090 210 2240 430 2440" fill="none" stroke="#78836a" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+ </div>
 <header class="topline"><span class="eyebrow">Cuaderno de campo · Edición especial</span></header>
 <section class="hero" id="inicio">
  <span class="hero-index">REGISTRO N.º 040 · NOVIEMBRE 2026</span>
