@@ -245,13 +245,15 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
  .hero-index{left:-30px;top:7%;z-index:1}
 }
 
-/* Serpiente de fondo: cuerpo texturizado, sin cabeza, limitado al recorrido de las tarjetas */
-.shell:before{z-index:0}
-.modules{position:relative;isolation:isolate}
-.snake-watermark{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.42}
-.snake-watermark svg{display:block;width:100%;height:100%}
-.modules>.card{z-index:1}
-.shell>header,.shell>.hero,.shell>.modules,.shell>.closing,.shell>.footer{position:relative;z-index:2}
+/* Serpientes ornamentales: franjas horizontales con la textura original de escamas */
+.snake-divider{width:100%;height:48px;margin:5px 0 3px;display:block;overflow:hidden;pointer-events:none;opacity:.96}
+.snake-divider svg{display:block;width:100%;height:100%;overflow:visible}
+.snake-divider--bottom{margin:5px 0 2px}
+.snake-divider--bottom svg{transform:scaleX(-1)}
+@media(max-width:720px){
+ .snake-divider{height:36px;margin:3px 0 2px}
+ .snake-divider--bottom{margin:3px 0 1px}
+}
 
 /* Paleta festiva Brasil: verde y azul protagonistas; amarillo solo como acento fino */
 :root{--brazil-green:#168447;--brazil-blue:#1675B9;--brazil-yellow:#F2C52E}
@@ -359,6 +361,19 @@ h1,.book-title{color:var(--brazil-green)}
 <body>
 <main class="shell">
 <header class="topline"><span class="eyebrow">Cuaderno de campo · Edición especial</span></header>
+<div class="snake-divider snake-divider--top" aria-hidden="true">
+ <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
+  <defs>
+   <pattern id="snake-scales-top" width="24" height="26" patternUnits="userSpaceOnUse">
+    <path d="M2 13 Q12 -2 22 13 Q12 28 2 13Z" fill="none" stroke="#D9C89F" stroke-width="2.2" opacity=".9"/>
+   </pattern>
+  </defs>
+  <path d="M-15 58 C105 58 125 15 255 18 C385 21 380 82 515 80 C650 78 660 22 790 24 C920 26 950 78 1215 40" fill="none" stroke="#30362b" stroke-width="33" stroke-linecap="round" stroke-linejoin="round" opacity=".13"/>
+  <path d="M-15 58 C105 58 125 15 255 18 C385 21 380 82 515 80 C650 78 660 22 790 24 C920 26 950 78 1215 40" fill="none" stroke="#168447" stroke-width="29" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-15 58 C105 58 125 15 255 18 C385 21 380 82 515 80 C650 78 660 22 790 24 C920 26 950 78 1215 40" fill="none" stroke="url(#snake-scales-top)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-15 58 C105 58 125 15 255 18 C385 21 380 82 515 80 C650 78 660 22 790 24 C920 26 950 78 1215 40" fill="none" stroke="#B69A62" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+ </svg>
+</div>
 <section class="hero" id="inicio">
  <span class="hero-index">REGISTRO N.º 040 · NOVIEMBRE 2026</span>
  <div class="hero-copy">
@@ -380,18 +395,6 @@ h1,.book-title{color:var(--brazil-green)}
 </section>
 <div class="hero-rule"></div>
 <section class="modules" aria-label="Bitácora de la celebración">
- <div class="snake-watermark" aria-hidden="true">
-  <svg viewBox="0 0 1000 2200" preserveAspectRatio="none">
-   <defs>
-    <pattern id="snake-scales" width="24" height="26" patternUnits="userSpaceOnUse">
-     <path d="M2 13 Q12 -2 22 13 Q12 28 2 13Z" fill="none" stroke="#D9C89F" stroke-width="2.2" opacity=".82"/>
-    </pattern>
-   </defs>
-   <path d="M105 -45 C710 125 920 340 665 555 C405 770 95 940 335 1150 C575 1360 900 1515 700 1735 C540 1910 330 2050 475 2110" fill="none" stroke="#758565" stroke-width="50" stroke-linecap="round" stroke-linejoin="round" opacity=".23"/>
-   <path d="M105 -45 C710 125 920 340 665 555 C405 770 95 940 335 1150 C575 1360 900 1515 700 1735 C540 1910 330 2050 475 2110" fill="none" stroke="url(#snake-scales)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" opacity=".58"/>
-   <path d="M105 -45 C710 125 920 340 665 555 C405 770 95 940 335 1150 C575 1360 900 1515 700 1735 C540 1910 330 2050 475 2110" fill="none" stroke="#B69A62" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".34"/>
-  </svg>
- </div>
  
  
  <article class="card field-card">
@@ -443,6 +446,19 @@ h1,.book-title{color:var(--brazil-green)}
  <p>Algunas quedan en los cuadernos; otras, en las historias que compartimos. Esta vez, que las mejores evidencias sean las fotografías, las risas y los recuerdos.</p>
  <span class="script">¡Nos vemos en el campo!</span>
 </section>
+<div class="snake-divider snake-divider--bottom" aria-hidden="true">
+ <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
+  <defs>
+   <pattern id="snake-scales-bottom" width="24" height="26" patternUnits="userSpaceOnUse">
+    <path d="M2 13 Q12 -2 22 13 Q12 28 2 13Z" fill="none" stroke="#D9C89F" stroke-width="2.2" opacity=".9"/>
+   </pattern>
+  </defs>
+  <path d="M-15 58 C105 58 125 15 255 18 C385 21 380 82 515 80 C650 78 660 22 790 24 C920 26 950 78 1215 40" fill="none" stroke="#30362b" stroke-width="33" stroke-linecap="round" stroke-linejoin="round" opacity=".13"/>
+  <path d="M-15 58 C105 58 125 15 255 18 C385 21 380 82 515 80 C650 78 660 22 790 24 C920 26 950 78 1215 40" fill="none" stroke="#168447" stroke-width="29" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-15 58 C105 58 125 15 255 18 C385 21 380 82 515 80 C650 78 660 22 790 24 C920 26 950 78 1215 40" fill="none" stroke="url(#snake-scales-bottom)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-15 58 C105 58 125 15 255 18 C385 21 380 82 515 80 C650 78 660 22 790 24 C920 26 950 78 1215 40" fill="none" stroke="#B69A62" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+ </svg>
+</div>
 <footer class="footer"><span>Alonso · 40 años</span><span>Bitácora de celebración · Noviembre 2026</span></footer>
 </main>
 <script>
