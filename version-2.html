@@ -168,6 +168,9 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
 .birthday-card p{font-size:.85rem;color:var(--muted)}
 .birthday-card .handnote{font-size:1.35rem;line-height:1.1}
 .birthday-card .aside-tag{align-self:flex-start}
+.birthday-count{display:flex;align-items:center;gap:8px;margin-top:15px;color:var(--olive);font-size:.8rem;font-weight:600}
+.birthday-count b{width:35px;height:35px;display:grid;place-items:center;border:1px solid var(--gold);background:#f7f1e3;border-radius:4px;font:600 1.15rem 'Fraunces',serif;color:var(--olive)}
+@media(max-width:720px){.birthday-count{margin-top:13px}.birthday-count b{width:34px;height:34px;font-size:1.1rem}}
 @media(max-width:720px){
  .field-card,.field-aside{grid-column:1}
  .map-preview{height:185px}
@@ -266,11 +269,10 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
   </section>
  </article>
  <aside class="card field-aside birthday-card">
-  <div class="section-label">Nota personal · 18 de noviembre</div>
-  <div class="birthday-number"><span id="bdays">11</span><small>días</small></div>
+  <div class="section-label">Nota personal</div>
   <h2>Antes de la celebración… ¡es mi cumpleaños!</h2>
-  <p>La fecha original es el 18 de noviembre. Y, por supuesto, los saludos anticipados son más que bienvenidos.</p>
-  <span class="handnote">Se reciben abrazos, buenos deseos y saludos ✳</span>
+  <p>La fecha original es el 18 de noviembre, así que los abrazos, buenos deseos y saludos anticipados son más que bienvenidos.</p>
+  <div class="birthday-count" aria-label="Faltan días para el cumpleaños"><span>Faltan</span><b id="bdays">11</b><span>días</span></div>
   <span class="aside-tag">Registro especial · 18.11.2026</span>
  </aside>
  <section class="card rsvp-card" id="confirmar">
