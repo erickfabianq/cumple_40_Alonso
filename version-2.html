@@ -271,6 +271,49 @@ h1,h2,h3,.book-title,.detail strong{color:var(--brazil-green)}
 .book-stamp,.book-stamp .stamp-number{color:var(--brazil-green)}
 .btn{background:var(--brazil-green);color:#fff;border:1px solid var(--brazil-yellow)}
 .snake-watermark{opacity:.48}
+
+/* Propuesta cromática Brasil: papel claro y contraste editorial */
+:root{
+ --paper:#FCFBF7;--card:#FFFFFF;--ink:#26392F;--muted:#64716A;
+ --line:#E2E5DD;--olive:#14834B;--olive2:#16844B;--gold:#D8AE27;
+ --brazil-green:#11874C;--brazil-blue:#1769B2;--brazil-yellow:#F7D324;
+}
+body{background:#E9EEE8}
+.shell{background:var(--paper);border-color:#D6DFD4}
+.card{background:var(--card);border-color:var(--line)}
+.card:after{border-color:#E7ECE5}
+.note-card,.birthday-card{background:#F0F6EF}
+.field-aside{background:#EFF5F9}
+h1,.book-title{color:var(--brazil-green)}
+.note-card h2,.field-card h2,.birthday-card h2,.closing h2,.archive-card h2{color:var(--brazil-blue)}
+.date-day{color:var(--brazil-blue)}
+.date-month{color:var(--brazil-green)}
+.note-card .handnote,.closing .script{color:#A77B08}
+.count-card,.field-card .event-count{background:var(--brazil-blue);color:#fff}
+.count-card h3,.event-count h3{color:#fff}
+.count-card .section-label{color:#FCEBA0}
+.count-card .digit b{color:#FFE36B}
+.rsvp-card{background:#178B51}
+.rsvp-card h2{color:#fff}
+.rsvp-card .section-label{color:#FFF0A6}
+.rsvp-card .btn{background:#0B5633;color:#fff;border:1px solid #F7D324}
+.book-stamp{background:var(--brazil-yellow);border-color:#C49A15;box-shadow:0 0 0 3px #F7D324,0 0 0 4px #C49A15}
+.book-stamp .stamp-number{color:#08743E}
+.book-stamp{color:var(--brazil-blue)}
+.book-stamp .stamp-number{font-weight:600}
+.book-title{left:47px;right:12px;top:34px;font-size:.89rem;letter-spacing:-.02em;white-space:nowrap}
+.book-photo-wrap{position:absolute;left:54px;right:20px;top:71px;bottom:51px;overflow:hidden;border:1px solid #D7C9AB;background:linear-gradient(135deg,#EFF3E8,#DFE8E1);box-shadow:0 2px 8px #30372d16}
+.book-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.book-photo-wrap.photo-pending:after{content:"Fotografía de Alonso";position:absolute;inset:0;display:grid;place-items:center;font:600 1.1rem 'Caveat',cursive;color:var(--brazil-green)}
+.book-coords{bottom:27px;z-index:2}
+.book-stamp{z-index:3}
+.book-pages:before{background:repeating-linear-gradient(0deg,transparent 0 25px,#6B846520 25px 26px)}
+@media(max-width:720px){
+ .book-title{left:44px;top:28px;font-size:.73rem}
+ .book-photo-wrap{left:46px;right:16px;top:61px;bottom:44px}
+ .book-coords{bottom:20px}
+}
+
 </style>
 </head>
 <body>
@@ -287,8 +330,8 @@ h1,h2,h3,.book-title,.detail strong{color:var(--brazil-green)}
  <div class="hero-art" aria-label="Cuaderno de campo antropológico con anotaciones y geometrías inspiradas en diseños textiles amazónicos">
   <div class="fieldbook" aria-hidden="true">
    <div class="book-pages"></div><div class="book-spine"></div><div class="textile-band"></div>
-   <div class="book-title">Cuaderno<br>de campo</div>
-   <div class="book-subtitle">Historias compartidas</div>
+   <div class="book-title">Cuaderno de campo</div>
+   <div class="book-photo-wrap"><img class="book-photo" src="alonso-cuaderno.jpg" alt="Fotografía de Alonso" onerror="this.style.display='none';this.parentElement.classList.add('photo-pending')"></div>
    <div class="book-coords">REGISTRO 040 · 21.11.2026</div>
    <div class="book-stamp">ALONSO<br><span class="stamp-number">40</span>AÑOS</div>
   </div>
@@ -318,7 +361,7 @@ h1,h2,h3,.book-title,.detail strong{color:var(--brazil-green)}
   <div class="detail-list">
    <div class="detail"><span class="detail-icon">◷</span><div><strong>Desde las 8:30 p. m.</strong><span>Ingreso libre hasta las 10:30 p. m. Después, el ingreso cuesta S/ 20.</span></div></div>
    <div class="detail"><span class="detail-icon">⌖</span><div><strong>Shushupe Bar</strong><span>Av. Grau 203, Barranco · a media cuadra del Parque Municipal.</span><a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shushupe+Bar%2C+Av.+Grau+203%2C+Barranco%2C+Lima">Consultar ubicación ↗</a></div></div>
-   <div class="detail"><span class="detail-icon">♡</span><div><strong>La compañía</strong><span>Ven con ganas de conversar, brindar y sumar recuerdos.</span><a class="text-link" target="_blank" rel="noopener" href="https://www.instagram.com/shushupebar/?hl=es">Conoce Shushupe ↗</a></div></div>
+   <div class="detail"><span class="detail-icon">♡</span><div><strong>La compañía</strong><span>Ven con ganas de conversar, brindar y sumar recuerdos.</span><a class="text-link" target="_blank" rel="noopener" href="https://www.instagram.com/shushupebar/?hl=es">Conoce Shushupe Bar ↗</a></div></div>
   </div>
   <div class="map-preview"><iframe title="Mapa de Shushupe Bar en Barranco" loading="lazy" src="https://maps.google.com/maps?q=Shushupe%20Bar%2C%20Av.%20Grau%20203%2C%20Barranco%2C%20Lima&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
   <section class="count-card event-count" aria-label="Cuenta regresiva para la celebración">
