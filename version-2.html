@@ -178,11 +178,29 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
  .birthday-number span{font-size:5rem}
 }
 
+
+/* Sello de aniversario: más presencia sin alterar la paleta */
+.book-stamp{
+ width:88px;
+ height:88px;
+ right:17px;
+ bottom:39px;
+ color:#fff;
+ font-size:.76rem;
+ font-weight:700;
+ border-color:#d8c89e;
+ background:var(--olive);
+ letter-spacing:.035em;
+}
+@media(max-width:720px){
+ .book-stamp{width:74px;height:74px;right:15px;bottom:33px;font-size:.67rem}
+}
+
 </style>
 </head>
 <body>
 <main class="shell">
-<header class="topline"><span class="eyebrow">Cuaderno de campo · Edición especial</span><span class="edition">ALONSO / 40 AÑOS</span></header>
+<header class="topline"><span class="eyebrow">Cuaderno de campo · Edición especial</span></header>
 <section class="hero" id="inicio">
  <span class="hero-index">REGISTRO N.º 040 · NOVIEMBRE 2026</span>
  <div class="hero-copy">
