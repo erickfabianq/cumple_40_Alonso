@@ -147,6 +147,37 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
 .field-aside:before{background:repeating-linear-gradient(45deg,transparent 0 5px,#a96e56 5px 7px,transparent 7px 10px)}
 @media(max-width:720px){.hero-art{min-height:210px;margin-top:3px}.fieldbook{width:min(78vw,310px);min-height:225px}.book-title{top:34px;font-size:.9rem}.book-subtitle{top:80px}.book-stamp{width:65px;height:65px;right:18px;bottom:37px;font-size:.58rem}.book-coords{bottom:25px;font-size:.48rem}.specimen-label{right:4%;bottom:2%;font-size:.5rem}}
 
+
+/* Ajustes de jerarquía: datos del festejo, mapa y dos fechas significativas */
+.field-card{grid-column:span 8}
+.field-aside{grid-column:span 4}
+.map-preview{height:172px;margin-top:19px;border:1px solid var(--line);padding:5px;background:#e9e4d7;position:relative;z-index:1}
+.map-preview iframe{display:block;width:100%;height:100%;border:0}
+.field-card .event-count{margin-top:18px;display:flex;grid-column:auto;align-items:center;justify-content:space-between;gap:12px;padding:17px 19px}
+.event-count .section-label{font-size:.55rem}
+.event-count h3{font-size:1.12rem}
+.event-count .digits{gap:16px}
+.event-count .digit b{font-size:2.1rem}
+.event-count .digit small{font-size:.48rem}
+.birthday-card{background:#e9eadf;display:flex;flex-direction:column;justify-content:center;min-height:100%}
+.birthday-card:before{background:repeating-linear-gradient(90deg,transparent 0 7px,#78836a 7px 9px,transparent 9px 14px)}
+.birthday-number{display:flex;align-items:baseline;gap:9px;margin:12px 0 17px;color:var(--olive)}
+.birthday-number span{font:500 clamp(4.6rem,8vw,6.6rem)/.85 'Fraunces',serif;letter-spacing:-.09em}
+.birthday-number small{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--olive2);font-weight:700}
+.birthday-card h2{font-size:clamp(1.65rem,2.8vw,2.3rem)}
+.birthday-card p{font-size:.85rem;color:var(--muted)}
+.birthday-card .handnote{font-size:1.35rem;line-height:1.1}
+.birthday-card .aside-tag{align-self:flex-start}
+@media(max-width:720px){
+ .field-card,.field-aside{grid-column:1}
+ .map-preview{height:185px}
+ .field-card .event-count{display:block;padding:18px 15px}
+ .event-count .digits{margin-top:14px;gap:8px}
+ .event-count .digit b{font-size:1.9rem}
+ .birthday-card{min-height:0}
+ .birthday-number span{font-size:5rem}
+}
+
 </style>
 </head>
 <body>
@@ -196,22 +227,20 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
    <div class="detail"><span class="detail-icon">⌖</span><div><strong>Shushupe Bar</strong><span>Av. Grau 203, Barranco · a media cuadra del Parque Municipal.</span><a class="text-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shushupe+Bar%2C+Av.+Grau+203%2C+Barranco%2C+Lima">Consultar ubicación ↗</a></div></div>
    <div class="detail"><span class="detail-icon">✳</span><div><strong>La compañía</strong><span>Ven con ganas de conversar, brindar y sumar recuerdos.</span><a class="text-link" target="_blank" rel="noopener" href="https://www.instagram.com/shushupebar/?hl=es">Conoce Shushupe ↗</a></div></div>
   </div>
+  <div class="map-preview"><iframe title="Mapa de Shushupe Bar en Barranco" loading="lazy" src="https://maps.google.com/maps?q=Shushupe%20Bar%2C%20Av.%20Grau%20203%2C%20Barranco%2C%20Lima&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  <section class="count-card event-count" aria-label="Cuenta regresiva para la celebración">
+   <div><div class="section-label">04 · Cuenta regresiva</div><h3>La fecha ya está en el calendario.</h3></div>
+   <div class="digits"><div class="digit"><b id="ed">--</b><small>Días</small></div><div class="digit"><b id="eh">--</b><small>Horas</small></div><div class="digit"><b id="em">--</b><small>Min</small></div><div class="digit"><b id="es">--</b><small>Seg</small></div></div>
+  </section>
  </article>
- <aside class="card field-aside">
-  <div class="section-label">Nota de campo · Barranco</div>
-  <svg class="contour" viewBox="0 0 320 130" fill="none" aria-hidden="true">
-   <path d="M-10 28 C45 -4 84 63 133 30 S222 -8 330 28 M-10 48 C45 16 84 83 133 50 S222 12 330 48 M-10 68 C45 36 84 103 133 70 S222 32 330 68 M-10 88 C45 56 84 123 133 90 S222 52 330 88 M-10 108 C45 76 84 143 133 110 S222 72 330 108" stroke="#9a9d82" stroke-width="1.2"/>
-   <circle cx="177" cy="62" r="7" fill="#a96e56"/><circle cx="177" cy="62" r="18" stroke="#a96e56" stroke-dasharray="2 4"/>
-   <path d="M177 43 V20 M177 81 V105 M158 62 H135 M196 62 H220" stroke="#a96e56" stroke-width="1"/>
-  </svg>
-  <h2>Un punto de encuentro.</h2>
-  <p>Una noche para cerrar por un momento la libreta de campo y abrir espacio a las conversaciones, los encuentros y las historias compartidas.</p>
-  <span class="aside-tag">Punto de reunión · Barranco</span>
+ <aside class="card field-aside birthday-card">
+  <div class="section-label">Nota personal · 18 de noviembre</div>
+  <div class="birthday-number"><span id="bdays">11</span><small>días</small></div>
+  <h2>Antes de la celebración… ¡es mi cumpleaños!</h2>
+  <p>La fecha original es el 18 de noviembre. Y, por supuesto, los saludos anticipados son más que bienvenidos.</p>
+  <span class="handnote">Se reciben abrazos, buenos deseos y saludos ✳</span>
+  <span class="aside-tag">Registro especial · 18.11.2026</span>
  </aside>
- <section class="card count-card" aria-label="Cuenta regresiva">
-  <div><div class="section-label">04 · Cuenta regresiva</div><h3>La fecha ya está en el calendario.</h3></div>
-  <div class="digits"><div class="digit"><b id="ed">--</b><small>Días</small></div><div class="digit"><b id="eh">--</b><small>Horas</small></div><div class="digit"><b id="em">--</b><small>Min</small></div><div class="digit"><b id="es">--</b><small>Seg</small></div></div>
- </section>
  <section class="card rsvp-card" id="confirmar">
   <div class="section-label">05 · Registro de participantes</div>
   <h2>Confirma tu asistencia.</h2>
@@ -241,7 +270,22 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
 <script>
 const WHATSAPP_NUMBER='51989020905';
 const eventDate=new Date('2026-11-21T20:30:00-05:00');
-function tick(){let diff=Math.max(0,eventDate-new Date());const d=Math.floor(diff/86400000);diff%=86400000;const h=Math.floor(diff/3600000);diff%=3600000;const m=Math.floor(diff/60000);const s=Math.floor(diff/1000)%60;document.getElementById('ed').textContent=d;document.getElementById('eh').textContent=String(h).padStart(2,'0');document.getElementById('em').textContent=String(m).padStart(2,'0');document.getElementById('es').textContent=String(s).padStart(2,'0')}
+const birthdayDate=new Date('2026-11-18T00:00:00-05:00');
+function tick(){
+ let diff=Math.max(0,eventDate-new Date());
+ const d=Math.floor(diff/86400000);diff%=86400000;
+ const h=Math.floor(diff/3600000);diff%=3600000;
+ const m=Math.floor(diff/60000);const s=Math.floor(diff/1000)%60;
+ document.getElementById('ed').textContent=d;
+ document.getElementById('eh').textContent=String(h).padStart(2,'0');
+ document.getElementById('em').textContent=String(m).padStart(2,'0');
+ document.getElementById('es').textContent=String(s).padStart(2,'0');
+ const birthdayDiff=birthdayDate-new Date();
+ const birthdayDays=Math.max(0,Math.ceil(birthdayDiff/86400000));
+ const birthdayCounter=document.getElementById('bdays');
+ if(birthdayDiff>0){birthdayCounter.textContent=birthdayDays;}
+ else{birthdayCounter.textContent='✳';}
+}
 tick();setInterval(tick,1000);
 document.getElementById('whatsapp-btn').addEventListener('click',()=>{const form=document.getElementById('rsvp-form');if(!form.reportValidity())return;const data=new FormData(form);let msg=`Hola, Alonso. Soy ${data.get('guest')}. ${data.get('answer')}`;if(data.get('note'))msg+=` Te dejo una nota: ${data.get('note')}`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,'_blank','noopener');document.getElementById('form-msg').textContent='El mensaje está preparado. Envíalo desde WhatsApp para confirmar.'});
 </script>
