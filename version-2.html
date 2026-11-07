@@ -253,17 +253,24 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
 .modules>.card{z-index:1}
 .shell>header,.shell>.hero,.shell>.modules,.shell>.closing,.shell>.footer{position:relative;z-index:2}
 
-/* Acentos festivos inspirados en los colores de Brasil, sin desplazar la paleta editorial */
-:root{--brazil-green:#398b57;--brazil-blue:#397eae;--brazil-yellow:#e0b844}
-.kicker{color:var(--brazil-green)}
-.section-label:before{background:linear-gradient(90deg,var(--brazil-green) 0 45%,var(--brazil-blue) 45% 72%,var(--brazil-yellow) 72%)}
-.textile-band{background:repeating-linear-gradient(45deg,transparent 0 5px,#9b8052 5px 7px,transparent 7px 10px),repeating-linear-gradient(-45deg,transparent 0 5px,var(--brazil-green) 5px 7px,transparent 7px 10px),linear-gradient(90deg,transparent 0 38%,var(--brazil-blue) 38% 48%,transparent 48% 68%,var(--brazil-yellow) 68% 78%,transparent 78%)}
-.card:before{background:repeating-linear-gradient(45deg,transparent 0 5px,#9b8052 5px 7px,transparent 7px 10px),repeating-linear-gradient(-45deg,transparent 0 5px,var(--brazil-green) 5px 7px,transparent 7px 10px),linear-gradient(90deg,transparent 0 72%,var(--brazil-blue) 72% 84%,transparent 84% 90%,var(--brazil-yellow) 90% 96%,transparent 96%);background-size:12px 7px}
-.note-card:before{background:repeating-linear-gradient(90deg,transparent 0 7px,var(--brazil-green) 7px 9px,transparent 9px 14px),linear-gradient(90deg,transparent 0 72%,var(--brazil-blue) 72% 84%,var(--brazil-yellow) 84% 96%,transparent 96%);background-size:auto}
-.field-aside:before{background:repeating-linear-gradient(45deg,transparent 0 5px,var(--brazil-blue) 5px 7px,transparent 7px 10px),repeating-linear-gradient(-45deg,transparent 0 5px,var(--brazil-yellow) 5px 7px,transparent 7px 10px)}
-.date-month{color:var(--brazil-blue)}
-.detail-icon{color:var(--brazil-green)}
-.text-link{border-color:var(--brazil-yellow)}
+/* Paleta festiva Brasil: verde y azul protagonistas; amarillo solo como acento fino */
+:root{--brazil-green:#168447;--brazil-blue:#1675B9;--brazil-yellow:#F2C52E}
+h1,h2,h3,.book-title,.detail strong{color:var(--brazil-green)}
+.kicker,.handnote,.birthday-number{color:var(--brazil-green)}
+.subtitle,.book-subtitle,.date-month,.birthday-number small,.aside-tag{color:var(--brazil-blue)}
+.section-label{color:var(--brazil-blue)}
+.section-label:before{background:linear-gradient(90deg,var(--brazil-green) 0 46%,var(--brazil-blue) 46% 92%,var(--brazil-yellow) 92%)}
+.textile-band{background:repeating-linear-gradient(45deg,transparent 0 5px,#9b8052 5px 7px,transparent 7px 10px),repeating-linear-gradient(-45deg,transparent 0 5px,var(--brazil-green) 5px 7px,transparent 7px 10px),linear-gradient(90deg,transparent 0 38%,var(--brazil-blue) 38% 48%,transparent 48% 73%,var(--brazil-yellow) 73% 76%,transparent 76%)}
+.card:before{background:repeating-linear-gradient(45deg,transparent 0 5px,#9b8052 5px 7px,transparent 7px 10px),repeating-linear-gradient(-45deg,transparent 0 5px,var(--brazil-green) 5px 7px,transparent 7px 10px),linear-gradient(90deg,transparent 0 76%,var(--brazil-blue) 76% 91%,transparent 91% 96%,var(--brazil-yellow) 96% 98%,transparent 98%);background-size:12px 7px}
+.note-card:before{background:repeating-linear-gradient(90deg,transparent 0 7px,var(--brazil-green) 7px 9px,transparent 9px 14px),linear-gradient(90deg,transparent 0 80%,var(--brazil-blue) 80% 94%,var(--brazil-yellow) 94% 96%,transparent 96%);background-size:auto}
+.field-aside:before,.birthday-card:before{background:repeating-linear-gradient(45deg,transparent 0 5px,var(--brazil-blue) 5px 7px,transparent 7px 10px),repeating-linear-gradient(-45deg,transparent 0 5px,var(--brazil-green) 5px 7px,transparent 7px 10px),linear-gradient(90deg,transparent 0 94%,var(--brazil-yellow) 94% 96%,transparent 96%)}
+.date-day{color:var(--brazil-green)}
+.detail-icon{color:var(--brazil-blue)}
+.text-link{color:var(--brazil-green);border-color:var(--brazil-yellow)}
+.aside-tag{border-color:var(--brazil-blue)}
+.book-stamp,.book-stamp .stamp-number{color:var(--brazil-green)}
+.btn{background:var(--brazil-green);color:#fff;border:1px solid var(--brazil-yellow)}
+.snake-watermark{opacity:.48}
 </style>
 </head>
 <body>
@@ -293,12 +300,13 @@ body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543
  <div class="snake-watermark" aria-hidden="true">
   <svg viewBox="0 0 1000 2200" preserveAspectRatio="none">
    <defs>
-    <pattern id="snake-scales" width="34" height="26" patternUnits="userSpaceOnUse">
-     <path d="M-17 13 Q-8 0 0 13 T17 13 T34 13 M0 26 Q9 13 17 26 T34 26 T51 26" fill="none" stroke="#68785c" stroke-width="2.1" opacity=".7"/>
+    <pattern id="snake-scales" width="24" height="26" patternUnits="userSpaceOnUse">
+     <path d="M2 13 Q12 -2 22 13 Q12 28 2 13Z" fill="none" stroke="#D9C89F" stroke-width="2.2" opacity=".82"/>
     </pattern>
    </defs>
-   <path d="M105 -45 C710 125 920 340 665 555 C405 770 95 940 335 1150 C575 1360 900 1515 700 1735 C540 1910 330 2050 475 2110" fill="none" stroke="#758565" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" opacity=".18"/>
-   <path d="M105 -45 C710 125 920 340 665 555 C405 770 95 940 335 1150 C575 1360 900 1515 700 1735 C540 1910 330 2050 475 2110" fill="none" stroke="url(#snake-scales)" stroke-width="39" stroke-linecap="round" stroke-linejoin="round" opacity=".34"/>
+   <path d="M105 -45 C710 125 920 340 665 555 C405 770 95 940 335 1150 C575 1360 900 1515 700 1735 C540 1910 330 2050 475 2110" fill="none" stroke="#758565" stroke-width="50" stroke-linecap="round" stroke-linejoin="round" opacity=".23"/>
+   <path d="M105 -45 C710 125 920 340 665 555 C405 770 95 940 335 1150 C575 1360 900 1515 700 1735 C540 1910 330 2050 475 2110" fill="none" stroke="url(#snake-scales)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" opacity=".58"/>
+   <path d="M105 -45 C710 125 920 340 665 555 C405 770 95 940 335 1150 C575 1360 900 1515 700 1735 C540 1910 330 2050 475 2110" fill="none" stroke="#B69A62" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".34"/>
   </svg>
  </div>
  
