@@ -182,6 +182,31 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
  .move-title{font-size:clamp(2.7rem,5.2vw,4rem)}
 }
 
+
+/* Afinación final: sello, subtítulo y espacio para el álbum de recuerdos */
+.smalltitle{font-size:clamp(.78rem,1.25vw,1rem);letter-spacing:.12em}
+.hero-watermark{right:2.5%;top:25%;width:clamp(175px,25vw,275px);transform:rotate(2deg);color:rgba(182,154,98,.72);text-shadow:none}
+.hero-watermark span{font-size:.82rem;letter-spacing:.34em;font-weight:600}
+.hero-watermark strong{font-size:clamp(5.2rem,10vw,7.5rem);font-weight:500}
+.hero-watermark span:last-child{font-size:.76rem;letter-spacing:.36em}
+.hero-watermark:before,.hero-watermark:after{display:none!important;content:none!important}
+.people-art svg{max-width:460px}
+.after-party-mark{height:auto;min-height:92px;padding:1.2rem 0 0;display:flex;flex-direction:column;gap:.55rem;justify-content:center}
+.after-party-mark .gallery-note{font-family:'Caveat',cursive;font-size:1.12rem;line-height:1.25;color:var(--olive2);opacity:.9;text-align:center}
+@media(max-width:700px){
+ .smalltitle{font-size:.72rem;letter-spacing:.09em}
+ .hero-watermark{width:clamp(145px,40vw,172px);right:0;top:19%;color:rgba(182,154,98,.7)}
+ .hero-watermark span{font-size:.55rem;letter-spacing:.22em}
+ .hero-watermark strong{font-size:4.15rem}
+ .hero-watermark span:last-child{font-size:.52rem;letter-spacing:.24em}
+ .after-party-mark{min-height:82px;padding-top:1rem}
+ .after-party-mark .gallery-note{font-size:1.02rem}
+}
+@media(max-width:380px){
+ .hero-watermark{width:132px;right:-2%;top:20%}
+ .hero-watermark strong{font-size:3.7rem}
+ .smalltitle{font-size:.66rem}
+}
 </style>
 </head>
 <body>
@@ -211,7 +236,14 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
 <div class="route" aria-hidden="true"><svg viewBox="0 0 100 1000" preserveAspectRatio="none"><path d="M48 0 C10 110 90 155 48 255 S12 390 54 485 S90 640 48 730 S15 875 55 1000"/><circle cx="48" cy="5" r="5"/><circle cx="48" cy="255" r="5"/><circle cx="54" cy="485" r="5"/><circle cx="48" cy="730" r="5"/><circle cx="55" cy="995" r="5"/></svg></div>
 <section class="story" id="historia">
  <div class="story-copy"><span class="eyebrow">Nota de apertura · Observación N.º 40</span><h2>Una buena historia nunca se cuenta en solitario.</h2><p>Para esta ocasión dejaré de lado las entrevistas, las notas y las interpretaciones. Quiero encontrarme con los amigos, conversar sin apuro y celebrar todo lo vivido… y lo que todavía nos queda por descubrir.</p><p>Porque, después de todo, las mejores historias no siempre se registran en un cuaderno: algunas se construyen alrededor de una mesa.</p><span class="margin-note">Variable indispensable: ustedes.</span></div>
- <div class="people-art" aria-label="Ilustración lineal de personas conversando"><svg viewBox="0 0 460 340" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M48 274 C112 252 147 266 205 254 S326 244 410 270" stroke="#B69A62" stroke-width="1.5" stroke-dasharray="3 7"/><path d="M105 245 C83 211 89 170 119 157 C150 144 171 171 164 204 L155 249" stroke="#48543A" stroke-width="2.3"/><circle cx="129" cy="130" r="26" stroke="#48543A" stroke-width="2.3"/><path d="M108 125 Q127 101 149 122" stroke="#48543A" stroke-width="2"/><path d="M174 249 C166 214 185 178 214 176 C244 174 257 206 250 246" stroke="#788064" stroke-width="2.3"/><circle cx="214" cy="148" r="25" stroke="#788064" stroke-width="2.3"/><path d="M193 143 Q212 120 234 140" stroke="#788064" stroke-width="2"/><path d="M263 250 C256 215 276 181 305 183 C334 185 349 215 340 254" stroke="#48543A" stroke-width="2.3"/><circle cx="305" cy="155" r="25" stroke="#48543A" stroke-width="2.3"/><path d="M285 149 Q305 127 326 148" stroke="#48543A" stroke-width="2"/><path d="M149 225 Q205 201 276 225" stroke="#B69A62" stroke-width="2"/><path d="M175 245 L290 245 L315 275 L151 275 Z" fill="#B69A62" fill-opacity=".12" stroke="#B69A62" stroke-width="1.5"/><path d="M222 220 Q231 204 240 220 M230 214 L230 197" stroke="#B69A62" stroke-width="1.6" stroke-linecap="round"/><path d="M76 77 l7 14 15 2 -11 10 3 15 -14 -7 -13 7 3 -15 -11 -10 15 -2z" stroke="#B69A62" stroke-width="1.4"/><path d="M365 80 C378 68 391 68 403 80 M384 62 L384 99 M366 80 L402 80" stroke="#788064" stroke-width="1.3"/><circle cx="384" cy="80" r="25" stroke="#788064" stroke-dasharray="2 5"/></svg><span class="art-caption">Encuentro de la muestra: los amigos</span></div>
+ <div class="people-art" aria-label="Ilustración lineal de personas conversando"><svg viewBox="0 0 460 340" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 276 C105 250 158 269 230 254 S350 247 435 274" stroke="#B69A62" stroke-width="1.5" stroke-dasharray="3 7"/>
+<g stroke="#48543A" stroke-width="2.3"><circle cx="72" cy="132" r="22"/><path d="M50 127 Q70 106 91 125 M43 248 C38 211 48 177 72 174 C99 171 111 204 105 249"/>
+<circle cx="150" cy="111" r="22"/><path d="M129 107 Q149 86 171 105 M119 246 C115 209 126 156 150 154 C177 152 190 203 185 247"/>
+<circle cx="230" cy="130" r="23"/><path d="M208 125 Q229 102 251 124 M199 250 C195 211 205 174 230 173 C258 172 269 211 264 251"/>
+<circle cx="310" cy="110" r="22"/><path d="M289 105 Q309 84 331 104 M279 247 C275 208 286 153 310 152 C337 151 350 204 345 248"/>
+<circle cx="388" cy="132" r="22"/><path d="M367 127 Q387 105 409 126 M357 249 C352 211 364 176 388 174 C415 172 427 207 423 250"/></g>
+<path d="M110 226 Q230 195 350 226" stroke="#B69A62" stroke-width="2"/><path d="M150 245 L310 245 L335 275 L125 275 Z" fill="#B69A62" fill-opacity=".12" stroke="#B69A62" stroke-width="1.5"/><path d="M222 220 Q231 204 240 220 M230 214 L230 197" stroke="#B69A62" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M76 58 l7 14 15 2 -11 10 3 15 -14 -7 -13 7 3 -15 -11 -10 15 -2z" stroke="#B69A62" stroke-width="1.4"/><path d="M365 55 C378 43 391 43 403 55 M384 37 L384 74 M366 55 L402 55" stroke="#788064" stroke-width="1.3"/><circle cx="384" cy="55" r="25" stroke="#788064" stroke-dasharray="2 5"/></svg><span class="art-caption">Encuentro de la muestra: los amigos</span></div>
 </section>
 <section class="details" id="celebracion"><div class="details-head"><div><span class="eyebrow">Coordenadas del encuentro</span><h2>La próxima historia empieza aquí.</h2></div><span class="script">Punto de reunión<br>confirmado ✦</span></div>
  <div class="event-layout"><div><div class="event-date">21<small>noviembre · sábado</small></div><div class="arrival-note">¡Nos encontramos desde las 8:30 p. m.!</div></div><div class="event-info"><div class="info-line"><span class="symbol">◷</span><div><strong>8:30 p. m. · hasta las 4:00 a. m.</strong><span>Ingreso libre hasta las 10:30 p. m. Después, el ingreso cuesta S/ 20.</span></div></div><div class="info-line"><span class="symbol">⌖</span><div><strong>Shushupe Bar</strong><span>Av. Grau 203, Barranco · a media cuadra del Parque Municipal.</span><br><a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shushupe+Bar%2C+Av.+Grau+203%2C+Barranco%2C+Lima">Ver ubicación en el mapa ↗</a></div></div><div class="info-line"><span class="symbol">✳</span><div><strong>La compañía</strong><span>Ven con ganas de conversar, brindar y sumar recuerdos.</span><br><a class="map-link" target="_blank" rel="noopener" href="https://www.instagram.com/shushupebar/?hl=es">Conoce Shushupe en Instagram ↗</a></div></div></div></div>
@@ -220,7 +252,7 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
 <section class="rsvp" id="confirmar"><div class="rsvp-inner"><span class="eyebrow">Registro de participantes</span><h2>¿Podrás acompañarme?</h2><p>Me encantará saber si estarás por ahí. Déjame tus datos y prepara tu confirmación por WhatsApp.</p>
 <form class="rsvp-form" id="rsvp-form"><div class="field full"><label for="guest">Tu nombre</label><input id="guest" name="guest" placeholder="¿Cómo te llamas?" required></div><div class="field full"><label for="answer">¿Nos acompañas?</label><select id="answer" name="answer"><option value="¡Sí, asistiré!">¡Sí, asistiré!</option><option value="Aún estoy consultando mi agenda. Te confirmaré pronto.">Aún estoy consultando mi agenda</option></select></div><div class="field full"><label for="note">Una nota (opcional)</label><textarea id="note" name="note" rows="3" placeholder="Un saludo, una anécdota, con quién vendrás o algo que quieras contarme..."></textarea></div></form>
 <div class="form-foot"><button class="btn" id="whatsapp-btn" type="button">Enviar confirmación ↗</button><small>Al pulsar el botón, se abrirá WhatsApp con tu mensaje. Recuerda enviarlo allí para completar la confirmación.</small></div><div class="form-msg" id="form-msg" aria-live="polite"></div></div></section>
-<div class="after-party-mark" aria-label="Galería de recuerdos próximamente" title="Galería de recuerdos"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span></div>
+<div class="after-party-mark" aria-label="Galería de recuerdos próximamente" title="Galería de recuerdos"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span class="gallery-note">Próximamente, aquí compartiremos las fotos de esta gran noche.</span></div>
 <section class="closing"><span class="eyebrow">Última anotación</span><h2>Toda investigación deja huellas...</h2><p>Algunas quedan en los cuadernos; otras, en las historias que compartimos.</p><p>Esta vez, que las mejores evidencias sean las fotografías, las risas y los recuerdos.</p><div class="script">¡Nos vemos en el campo!</div> </section>
 <footer class="footer">Alonso · 40 años · Noviembre 2026</footer>
 </main>
