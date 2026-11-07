@@ -127,6 +127,26 @@ p{line-height:1.7}
 }
 @media(max-width:360px){.shell{padding:14px 10px}.card{padding:18px 15px}h1{font-size:3rem}.date-day{font-size:5.7rem}.digit b{font-size:1.8rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Identidad gráfica: bitácora antropológica y referencias amazónicas sutiles */
+body{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#46543c08 18px 19px),repeating-linear-gradient(45deg,transparent 0 18px,#b79a6208 18px 19px)}
+.shell:before{content:"";position:absolute;inset:7px;pointer-events:none;opacity:.18;background:repeating-linear-gradient(45deg,transparent 0 9px,#78836a 9px 10px,transparent 10px 19px);mask:linear-gradient(90deg,#000 0 5px,transparent 5px calc(100% - 5px),#000 calc(100% - 5px))}
+.hero-art{position:relative;min-height:300px;display:grid;place-items:center}
+.fieldbook{width:min(100%,350px);min-height:260px;position:relative;transform:rotate(3deg);filter:drop-shadow(0 15px 15px #30372d20)}
+.book-pages{position:absolute;inset:10px 8px 10px 18px;background:#fbf7eb;border:1px solid #cbbd9f;border-radius:5px 12px 12px 5px;box-shadow:inset 8px 0 0 #e9e0ce}
+.book-pages:before{content:"";position:absolute;inset:13px 14px 13px 25px;border:1px solid #e3d8c2;background:repeating-linear-gradient(0deg,transparent 0 25px,#9b9d8520 25px 26px)}
+.book-spine{position:absolute;left:10px;top:10px;bottom:10px;width:18px;background:linear-gradient(90deg,#394632,#657354);border-radius:4px 0 0 4px}
+.book-title{position:absolute;left:54px;top:40px;font:600 1.05rem/1.1 'Fraunces',serif;letter-spacing:.04em;color:var(--olive);text-transform:uppercase}
+.book-subtitle{position:absolute;left:55px;top:93px;font:600 1.35rem 'Caveat',cursive;color:var(--rust)}
+.book-coords{position:absolute;left:55px;bottom:31px;font-size:.55rem;letter-spacing:.13em;color:var(--muted)}
+.book-stamp{position:absolute;right:22px;bottom:45px;width:75px;height:75px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--olive);font:600 .65rem/1.2 'DM Sans';transform:rotate(-9deg)}
+.textile-band{position:absolute;left:43px;right:18px;top:15px;height:13px;opacity:.65;background:repeating-linear-gradient(45deg,transparent 0 5px,#9b8052 5px 7px,transparent 7px 10px),repeating-linear-gradient(-45deg,transparent 0 5px,#657354 5px 7px,transparent 7px 10px);background-size:12px 13px}
+.specimen-label{position:absolute;right:-1%;bottom:4%;background:var(--olive);color:var(--paper);padding:10px 14px;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;transform:rotate(-4deg);z-index:2}
+.card:before{content:"";position:absolute;top:0;left:0;right:0;height:7px;opacity:.7;background:repeating-linear-gradient(45deg,transparent 0 5px,#9b8052 5px 7px,transparent 7px 10px),repeating-linear-gradient(-45deg,transparent 0 5px,#657354 5px 7px,transparent 7px 10px);background-size:12px 7px}
+.note-card:before{background:repeating-linear-gradient(90deg,transparent 0 7px,#78836a 7px 9px,transparent 9px 14px)}
+.field-aside:before{background:repeating-linear-gradient(45deg,transparent 0 5px,#a96e56 5px 7px,transparent 7px 10px)}
+@media(max-width:720px){.hero-art{min-height:210px;margin-top:3px}.fieldbook{width:min(78vw,310px);min-height:225px}.book-title{top:34px;font-size:.9rem}.book-subtitle{top:80px}.book-stamp{width:65px;height:65px;right:18px;bottom:37px;font-size:.58rem}.book-coords{bottom:25px;font-size:.48rem}.specimen-label{right:4%;bottom:2%;font-size:.5rem}}
+
 </style>
 </head>
 <body>
@@ -140,20 +160,15 @@ p{line-height:1.7}
   <p class="subtitle">Estás invitado a la mudanza</p>
   <p class="hero-intro">Esta vez, el investigador también es protagonista. Una noche para reencontrarnos, conversar sin apuro y celebrar las historias que todavía nos quedan por compartir.</p>
  </div>
- <div class="hero-art" aria-label="Ilustración botánica inspirada en una lámina de campo">
-  <div class="specimen">
-   <svg viewBox="0 0 260 260" fill="none" aria-hidden="true">
-    <path d="M130 226 C126 177 134 126 130 38" stroke="#657354" stroke-width="3" stroke-linecap="round"/>
-    <path d="M130 179 C91 172 65 147 55 113 C94 111 123 133 130 179Z" fill="#aeb99a" stroke="#657354" stroke-width="1.6"/>
-    <path d="M130 146 C164 140 191 116 204 81 C166 78 139 101 130 146Z" fill="#c1c9ae" stroke="#657354" stroke-width="1.6"/>
-    <path d="M130 112 C101 103 84 82 82 55 C111 58 128 77 130 112Z" fill="#d4d7bd" stroke="#657354" stroke-width="1.6"/>
-    <path d="M130 179 L70 121 M130 146 L190 91 M130 112 L89 64" stroke="#78836a" stroke-width="1.1"/>
-    <path d="M130 226 C121 234 113 239 101 242 M130 226 C139 234 147 239 159 242" stroke="#b79a62" stroke-width="1.5"/>
-    <circle cx="130" cy="36" r="5" fill="#b79a62"/>
-    <path d="M48 207 C72 196 88 196 105 207 M155 57 C174 47 192 49 208 61" stroke="#b79a62" stroke-width="1" stroke-dasharray="2 5"/>
-   </svg>
+ <div class="hero-art" aria-label="Cuaderno de campo antropológico con anotaciones y geometrías inspiradas en diseños textiles amazónicos">
+  <div class="fieldbook" aria-hidden="true">
+   <div class="book-pages"></div><div class="book-spine"></div><div class="textile-band"></div>
+   <div class="book-title">Cuaderno<br>de campo</div>
+   <div class="book-subtitle">Historias compartidas</div>
+   <div class="book-coords">REGISTRO 040 · 21.11.2026</div>
+   <div class="book-stamp">ALONSO<br>40 AÑOS</div>
   </div>
-  <span class="specimen-label">Lámina botánica · 040</span>
+  <span class="specimen-label">Notas de una celebración · 040</span>
  </div>
 </section>
 <div class="hero-rule"></div>
@@ -169,7 +184,7 @@ p{line-height:1.7}
   <div class="section-label">02 · Variable indispensable</div>
   <div class="note-number">40<span style="font-size:1.1rem;letter-spacing:.08em"> AÑOS</span></div>
   <h2>Los amigos.</h2>
-  <p>La muestra no estaría completa sin quienes han sido parte de esta historia. Tu presencia es una de las coordenadas importantes de esta celebración.</p>
+  <p>El registro de estos 40 años no estaría completo sin quienes han sido parte de esta historia. Tu presencia es una de las coordenadas importantes de esta celebración.</p>
   <span class="handnote">Participante esperado: tú ✳</span>
  </aside>
  <article class="card field-card">
@@ -190,7 +205,7 @@ p{line-height:1.7}
    <path d="M177 43 V20 M177 81 V105 M158 62 H135 M196 62 H220" stroke="#a96e56" stroke-width="1"/>
   </svg>
   <h2>Un punto de encuentro.</h2>
-  <p>Una noche para cambiar la libreta de campo por una buena conversación. El registro de esta expedición lo hacemos entre todos.</p>
+  <p>Una noche para cerrar por un momento la libreta de campo y abrir espacio a las conversaciones, los encuentros y las historias compartidas.</p>
   <span class="aside-tag">Punto de reunión · Barranco</span>
  </aside>
  <section class="card count-card" aria-label="Cuenta regresiva">
@@ -212,7 +227,7 @@ p{line-height:1.7}
  <aside class="card archive-card">
   <div><div class="section-label">06 · Archivo de recuerdos</div><h2>Las huellas de la noche.</h2></div>
   <div class="camera-mark" aria-hidden="true">⌾</div>
-  <p>Próximamente, aquí compartiremos las fotos de esta gran noche.</p>
+  <p>Próximamente, aquí compartiremos las fotos y recuerdos de esta gran noche.</p>
  </aside>
 </section>
 <section class="closing">
