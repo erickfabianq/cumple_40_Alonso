@@ -347,7 +347,7 @@ function tick(){
  else{birthdayCounter.textContent='¡Hoy!';}
 }
 tick();setInterval(tick,1000);
-document.getElementById('whatsapp-btn').addEventListener('click',()=>{const form=document.getElementById('rsvp-form');if(!form.reportValidity())return;const data=new FormData(form);let msg=`Hola, Alonso. Soy ${data.get('guest')}. ${data.get('answer')}`;if(data.get('note'))msg+=` Te dejo una nota: ${data.get('note')}`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,'_blank','noopener');document.getElementById('form-msg').textContent='El mensaje está preparado. Envíalo desde WhatsApp para confirmar.'});
+document.getElementById('whatsapp-btn').addEventListener('click',()=>{const form=document.getElementById('rsvp-form');if(!form.reportValidity())return;const data=new FormData(form);const guest=data.get('guest');const answer=data.get('answer');const confirmed=answer==='¡Sí, asistiré!';let msg=confirmed?`🎉 ¡Sí, me sumo a la mudanza al cuarto piso!\n\nHola, Alonso. Soy ${guest} y confirmo que estaré contigo para celebrar tus 40 años. ¡Nos vemos en Shushupe Bar para brindar por esta nueva etapa!`:`🎉 ¡Estoy haciendo las coordinaciones para sumarme a la mudanza al cuarto piso!\n\nHola, Alonso. Soy ${guest} y todavía estoy consultando mi agenda para acompañarte en la celebración de tus 40 años.`;const note=data.get('note')?.trim();if(note)msg+=`\n\nNota: ${note}`;window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,'_blank','noopener');document.getElementById('form-msg').textContent='El mensaje está preparado. Envíalo desde WhatsApp para confirmar.'});
 </script>
 </body>
 </html>
