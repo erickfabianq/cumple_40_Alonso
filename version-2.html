@@ -385,6 +385,16 @@ h1,.book-title{color:var(--brazil-green)}
 /* Iconografía uniforme de coordenadas */
 .field-card .detail-icon{color:#1769B2;display:flex;align-items:flex-start;justify-content:center;padding-top:1px}
 .field-card .detail-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* Reproductor musical discreto y flotante */
+.music-toggle{position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;align-items:center;gap:9px;padding:11px 15px;border:2px solid #FFDB24;border-radius:999px;background:#1769B2;color:#fff;box-shadow:0 5px 20px rgba(0,0,0,.24);font:600 .85rem 'DM Sans',sans-serif;cursor:pointer;transition:transform .2s ease,background .2s ease}
+.music-toggle:hover{transform:translateY(-2px);background:#14578f}
+.music-toggle:focus-visible{outline:3px solid #FFDB24;outline-offset:3px}
+.music-toggle svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.music-toggle .music-pause{display:none}
+.music-toggle[aria-pressed="true"] .music-play{display:none}
+.music-toggle[aria-pressed="true"] .music-pause{display:block}
+@media(max-width:720px){.music-toggle{right:12px;bottom:12px;padding:10px 12px;font-size:.78rem}}
 </style>
 </head>
 <body>
@@ -503,7 +513,23 @@ h1,.book-title{color:var(--brazil-green)}
 </div>
 <footer class="footer"><span>Alonso · 40 años</span><span>Bitácora de celebración · Noviembre 2026</span></footer>
 </main>
+<audio id="invitation-music" preload="none" loop><source src="musica-Alonso.mpeg" type="audio/mpeg"></audio>
+<button class="music-toggle" id="music-toggle" type="button" aria-pressed="false" aria-label="Reproducir música">
+ <svg class="music-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14l11-7Z"/></svg>
+ <svg class="music-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+ <span id="music-label">Música</span>
+</button>
 <script>
+const invitationMusic=document.getElementById('invitation-music');
+const musicToggle=document.getElementById('music-toggle');
+const musicLabel=document.getElementById('music-label');
+musicToggle.addEventListener('click',async()=>{
+ if(!invitationMusic.paused){invitationMusic.pause();return;}
+ try{await invitationMusic.play();}
+ catch(error){musicLabel.textContent='Audio no disponible';musicToggle.setAttribute('aria-label','No se pudo reproducir la música');}
+});
+invitationMusic.addEventListener('play',()=>{musicToggle.setAttribute('aria-pressed','true');musicToggle.setAttribute('aria-label','Pausar música');musicLabel.textContent='Pausar';});
+invitationMusic.addEventListener('pause',()=>{musicToggle.setAttribute('aria-pressed','false');musicToggle.setAttribute('aria-label','Reproducir música');musicLabel.textContent='Música';});
 const WHATSAPP_NUMBER='51989020905';
 const eventDate=new Date('2026-11-21T20:30:00-05:00');
 const birthdayDate=new Date('2026-11-18T00:00:00-05:00');
