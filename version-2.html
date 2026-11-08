@@ -360,6 +360,15 @@ h1,.book-title{color:var(--brazil-green)}
 .rsvp-card .btn:hover{background:#FFE65C!important}
 .rsvp-card .btn:focus-visible{outline:3px solid #FFFFFF;outline-offset:3px}
 
+
+/* Retiro de variable indispensable: registro amplio y serpiente discreta al cierre */
+.rsvp-card{grid-column:span 12}
+.rsvp-card .rsvp-form{max-width:660px}
+.rsvp-card .submit-row{max-width:700px}
+.closing-snake-accent{height:33px;max-width:420px;margin:13px auto 0;overflow:hidden;opacity:.5;pointer-events:none}
+.closing-snake-accent .snake-card-trace{position:static!important;width:100%!important;height:100%!important;inset:auto!important;overflow:visible!important}
+.closing-snake-accent svg{display:block;width:100%;height:100%}
+@media(max-width:720px){.rsvp-card{grid-column:1/-1}.closing-snake-accent{height:24px;max-width:78%;margin-top:10px}}
 </style>
 </head>
 <body>
@@ -453,24 +462,17 @@ h1,.book-title{color:var(--brazil-green)}
   <div class="submit-row"><button class="btn" id="whatsapp-btn" type="button">Enviar confirmación ↗</button><small>WhatsApp se abrirá con tu mensaje listo. Recuerda enviarlo allí para completar la confirmación.</small></div>
   <div class="form-msg" id="form-msg" aria-live="polite"></div>
  </section>
- <aside class="card note-card">
-  <div class="snake-card-trace" aria-hidden="true">
+
+</section>
+<div class="hero-rule closing-rule" aria-hidden="true"></div>
+<div class="closing-snake-accent" aria-hidden="true"><div class="snake-card-trace" aria-hidden="true">
    <svg viewBox="0 0 1000 80" preserveAspectRatio="none">
     <defs><pattern id="snake-card-scales-four" width="24" height="26" patternUnits="userSpaceOnUse"><path d="M2 13 Q12 -2 22 13 Q12 28 2 13Z" fill="none" stroke="#D9C89F" stroke-width="2.2" opacity=".92"/></pattern></defs>
     <path d="M-20 42 C80 42 100 16 220 18 C340 20 360 62 490 60 C620 58 650 20 770 22 C890 24 920 58 1020 36" fill="none" stroke="#30362b" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" opacity=".13"/>
     <path d="M-20 42 C80 42 100 16 220 18 C340 20 360 62 490 60 C620 58 650 20 770 22 C890 24 920 58 1020 36" fill="none" stroke="#168447" stroke-width="29" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M-20 42 C80 42 100 16 220 18 C340 20 360 62 490 60 C620 58 650 20 770 22 C890 24 920 58 1020 36" fill="none" stroke="url(#snake-card-scales-four)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M-20 42 C80 42 100 16 220 18 C340 20 360 62 490 60 C620 58 650 20 770 22 C890 24 920 58 1020 36" fill="none" stroke="#B69A62" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
-   </svg>
-  </div>
-  <div class="section-label">06 · Variable indispensable</div>
-  <div class="note-number">40<span style="font-size:1.1rem;letter-spacing:.08em"> AÑOS</span></div>
-  <h2>Los amigos.</h2>
-  <p>El registro de estos 40 años no estaría completo sin quienes han sido parte de esta historia. Tu presencia es una de las coordenadas importantes de esta celebración.</p>
-  <span class="handnote">Participante esperado: tú</span>
- </aside>
-</section>
-<div class="hero-rule closing-rule" aria-hidden="true"></div>
+   </svg></div></div>
 <section class="closing">
  <div class="section-label" style="justify-content:center">Última anotación</div>
  <h2>Toda investigación deja huellas...</h2>
